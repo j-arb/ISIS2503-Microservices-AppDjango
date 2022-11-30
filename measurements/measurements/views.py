@@ -54,7 +54,7 @@ def MeasurementsCreate(request):
         for measurement in data_json:
             if not check_place(measurement):
                 return HttpResponse("unsuccessfully created measurement. Place does not exist")
-            elif not check_variable(data_json):
+            elif not check_variable(measurement):
                 return HttpResponse("unsuccessfully created measurement. Variable does not exist")
             else:
                 db_measurement = Measurement()
